@@ -3,7 +3,7 @@ export function PostCard (props) {
   let dateFormat = new Date(date).toLocaleString(),
     urlPoster = _embedded["wp:featuredmedia"]
       ? _embedded["wp:featuredmedia"][0].source_url
-      : "./assets/pic-not-found.svg";
+      : "app/assets/pic-not-found.svg";
 
   return `
     <article class="post-card">

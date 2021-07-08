@@ -1,13 +1,15 @@
-export function ajax (props) {
+export async function ajax (props) {
+  /* Se aplica asincronía a la función para que se ejecute en primer lugar
+  la renderización de los elementos en el nodo principal */
   let { url, cbSuccess } = props;
 
-  fetch(url)
+  await fetch(url)
     .then(res => res.ok ? res.json() : Promise.reject(res))
     .then(json => cbSuccess(json))
     .catch(err => {
       let message = err.statusText || "Hubo un error al conectar a la API";
 
-      document.getElementById("posts").innerHTML = `
+      document.getElementById("main").innerHTML = `
         <div class="error">
           <p>Error ${err.status}: ${message}</p>
         </div>

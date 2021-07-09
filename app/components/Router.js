@@ -1,6 +1,7 @@
 import API from "../helpers/wp_api.js";
 import { ajax } from "../helpers/ajax.js";
 import { PostCard } from "./PostCard.js";
+import { Post } from "./Post.js";
 
 export async function Router () {
   /* Se aplica asincronía a la función para que se ejecute en primer lugar
@@ -10,7 +11,7 @@ export async function Router () {
     $main = d.getElementById("main");
 
   const { hash } = location;
-  console.log(hash);
+  //console.log(hash);
 
   $main.innerHTML = null;
 
@@ -28,7 +29,13 @@ export async function Router () {
   } else if (hash.includes("#/search")) {
     $main.innerHTML = "<h2>Sección del Buscador</h2>"
   } else {
-    $main.innerHTML = "<h2>Contenido del post previamente seleccionado.</h2>"
+    await ajax({
+      url: `${API.POST}/${localStorage.getItem("wpPostId")}`,
+      cbSuccess: (post) => {
+        //console.log(post);
+        $main.innerHTML = Post(post);
+      }
+    });
   }
 
   d.querySelector(".loader").style.display = "none";

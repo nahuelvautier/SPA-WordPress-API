@@ -34,19 +34,6 @@ img {
   background-color: #dc2313;
 }
 
-.search-form {
-  margin: auto;
-  text-align: center;
-}
-
-.form-search input {
-  margin: auto;
-  padding: .25rem;
-  display: block;
-  border-radius: .25rem;
-  font-size: 110%;
-}
-
 .grid-fluid {
   margin: 1rem auto;
   max-width: 90%;
@@ -116,8 +103,25 @@ img {
 .post-page video {
   margin: 1rem auto;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   max-width: 100%;
+}
+
+.search-form {
+  margin: auto;
+  text-align: center
+}
+
+.search-form input {
+  margin: .4rem auto;
+  padding: .25rem;
+  display: block;
+  border-radius: .25rem;
+  font-size: 110%;
+}
+
+.search-form input[type="search"] {
+  margin-top: 2.5rem;
 }

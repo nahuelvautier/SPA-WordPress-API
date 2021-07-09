@@ -7,7 +7,6 @@ export async function Router () {
   /* Se aplica asincronía a la función para que se ejecute en primer lugar
   la renderización de los elementos en el nodo principal */
   const d = document,
-    w = window,
     $main = d.getElementById("main");
 
   const { hash } = location;
@@ -27,7 +26,16 @@ export async function Router () {
       }
     });
   } else if (hash.includes("#/search")) {
-    $main.innerHTML = "<h2>Sección del Buscador</h2>"
+    const query = localStorage.getItem("wpSearch");
+
+    if (!query) return false;
+    
+    await ajax({
+      url: `${API.SEARCH}${query}`,
+      cbSuccess: (search) => {
+        console.log(search);
+      }
+    });
   } else {
     await ajax({
       url: `${API.POST}/${localStorage.getItem("wpPostId")}`,

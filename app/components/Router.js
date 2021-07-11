@@ -12,7 +12,6 @@ export async function Router () {
 
   const { hash } = location;
   //console.log(hash);
-
   $main.innerHTML = null;
 
   if (!hash || hash === "#/") {
@@ -37,7 +36,7 @@ export async function Router () {
     await ajax({
       url: `${API.SEARCH}${query}`,
       cbSuccess: (search) => {
-        console.log(search);
+        //console.log(search);
         let html = "";
 
         if (search.length === 0) {

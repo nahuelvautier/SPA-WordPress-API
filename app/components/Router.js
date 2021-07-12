@@ -37,17 +37,17 @@ export async function Router () {
       url: `${API.SEARCH}${query}`,
       cbSuccess: (search) => {
         //console.log(search);
-        let html = "";
+        let htmlCode = "";
 
         if (search.length === 0) {
-          html = `
+          htmlCode = `
             <p class="error">No existen resultados de búsqueda para el término "${query}"</p>
           `;
         } else {
-          search.forEach(word => html += SearchCard(word));
+          search.forEach(postQuery => htmlCode += SearchCard(postQuery));
         }
 
-        $main.innerHTML = html;
+        $main.innerHTML = htmlCode;
       }
     });
   } else {

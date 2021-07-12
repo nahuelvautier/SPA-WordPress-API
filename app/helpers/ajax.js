@@ -1,7 +1,7 @@
 export async function ajax (props) {
   /* Se aplica asincronía a la función para que se ejecute en primer lugar
   la renderización de los elementos en el nodo principal */
-  let { url, cbSuccess } = props;
+  const { url, cbSuccess } = props;
 
   await fetch(url)
     .then(res => res.ok ? res.json() : Promise.reject(res))

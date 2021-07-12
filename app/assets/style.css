@@ -1,3 +1,11 @@
+:root {
+  --main-font: sans-serif;
+  --font-size: 16px;
+  --main-color: #fff;
+  --main-model-color: #eceff1;
+  --container-width: 1920px;
+}
+
 html {
   box-sizing: border-box;
   font-family: sans-serif;
@@ -8,6 +16,7 @@ html {
 
 body {
   margin: 0;
+  max-width: var(--container-width);
   overflow-x: hidden;
 }
 
@@ -20,6 +29,11 @@ a:hover { color: #00b0ff; }
 
 h1 { text-align: center; }
 
+main {
+  max-width: var(--container-width);
+  overflow-x: hidden;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -30,7 +44,7 @@ img {
   font-size: 150%;
   font-weight: bold;
   text-align: center;
-  color: #fff;
+  color: var(--main-color);
   background-color: #dc2313;
 }
 
@@ -43,13 +57,14 @@ img {
 
 .header {
   padding: .5rem;
+  max-width: var(--container-width);
   position: sticky;
   top: 0;
   text-align: center;
-  background-color: #fff;
+  background-color: var(--main-color);
 }
 
-.header > * { margin: 1rem auto }
+.header > * { margin: 1rem auto; }
 
 .loader {
   margin: 1rem auto;
@@ -64,7 +79,7 @@ img {
   margin: 1rem auto;
   padding: 1rem;
   width: 80%;
-  background-color: #eceff1;
+  background-color: var(--main-model-color);
 }
 
 .post-card p {
@@ -76,7 +91,7 @@ img {
   margin: 1rem auto;
   padding: 1rem;
   width: 80%;
-  background-color: #eceff1;
+  background-color: var(--main-model-color);
 }
 
 .post-page > aside {
@@ -94,7 +109,7 @@ img {
   display: block;
 }
 
-.post-page > article { padding: 0 2rem }
+.post-page > article { padding: 0 2rem; }
 
 .post-page figure,
 .post-page img,
@@ -122,6 +137,4 @@ img {
   font-size: 110%;
 }
 
-.search-form input[type="search"] {
-  margin-top: 2.5rem;
-}
+.search-form input[type="search"] { margin-top: 2.5rem; }

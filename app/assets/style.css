@@ -132,9 +132,9 @@ img {
 .search-form input {
   margin: .4rem auto;
   padding: .25rem;
-  display: block;
+  display: inline-block;
   border-radius: .25rem;
   font-size: 110%;
 }
 
-.search-form input[type="search"] { margin-top: 2.5rem; }
+.search-form input[type="search"] { margin-bottom: 1rem; }

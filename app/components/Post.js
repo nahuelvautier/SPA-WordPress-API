@@ -1,6 +1,11 @@
 export function Post (props) {
   const { content, date, title} = props,
     dateFormat = new Date(date).toLocaleDateString();
+
+  setTimeout(() => {
+    document.getElementById("attachment_19340").style.width = "100%";
+  }, 100);
+  
   return `
     <section class="post-page">
       <aside>

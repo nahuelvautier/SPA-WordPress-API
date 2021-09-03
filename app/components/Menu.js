@@ -6,7 +6,7 @@ export function Menu () {
     <span>-</span>
     <a href="#/search">Búsqueda</a>
     <span>-</span>
-    <a href="https://www.nahuelvautier.com" target="_blank" rel="noopener noreferrer">Nahuel Vautier</a>
+    <a href="https://nahuelvautier.netlify.app/" target="_blank" rel="noopener noreferrer">Nahuel Vautier</a>
   `;
   return $menu;
 }
